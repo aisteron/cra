@@ -34,6 +34,10 @@ export default class extends Component {
         })
     };
 
+    addItem = (text) => {
+        console.log('Added', text);
+    };
+
     render ()
     {
         return (
@@ -45,12 +49,13 @@ export default class extends Component {
                 </div>
 
                 <TodoList
-                    todos={this.state.todoData}
-                    onDeleted={ this.deleteItem}
+                    todos={this.state.todoData }
+                    onDeleted={ this.deleteItem }
                 />
+                <ItemAddForm onItemAdded={ this.addItem }/>
             </div>
         );
-    }
+    };
 
 
 };
